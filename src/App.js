@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import marked from 'marked';
+import Previewer from './components/Preview';
 
 const INIIAL_STATE = `
 this is a paragraph
@@ -9,11 +9,11 @@ this is a paragraph
 ***this is a quote***
 > Block Quotes!
 ***this is a list***
-- list item 1
-- list item 2
-- list item 3
+- item 1
+- item 2
+- item 3
 ***this is a link***
-[visit this website](https://github.com/cvilla714)
+[github](https://github.com/cvilla714)
 ***this is an inline***  \`<div></div>\`
 ***this is a blog of code*** : 
 \`\`\`
@@ -27,7 +27,6 @@ const magna = document.querySelector("youelement")
 
 const App = () => {
 	const [markedText, setMarkedText] = useState(INIIAL_STATE);
-	const markdown = marked(markedText, { breaks: true });
 	const handleChange = (e) => {
 		setMarkedText(e.target.value);
 	};
@@ -40,7 +39,7 @@ const App = () => {
 				value={markedText}
 				onChange={handleChange}
 			/>
-			<p id='preview' dangerouslySetInnerHTML={{ __html: markdown }}></p>
+			<Previewer text={markedText} />
 		</>
 	);
 };
