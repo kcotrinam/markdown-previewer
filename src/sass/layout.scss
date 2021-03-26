@@ -1,0 +1,16 @@
+body {
+	background-color: peru;
+}
+
+.main {
+	max-width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.title {
+	text-align-last: center;
+	font-size: 3.5rem;
+	color: hsl(0, 0, 85);
+}
