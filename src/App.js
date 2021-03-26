@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Previewer from './components/Preview';
 import Textarea from './components/Textarea';
+import Title from './components/Title';
+import './sass/layout.scss';
 
 const INIIAL_STATE = `
 this is a paragraph
@@ -24,8 +26,6 @@ const magna = document.querySelector("youelement")
 ![Onepice](https://images.pexels.com/photos/1165049/pexels-photo-1165049.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500)
 `;
 
-// console.log(INIIAL_STATE, { breaks: true });
-
 const App = () => {
 	const [markedText, setMarkedText] = useState(INIIAL_STATE);
 	const handleChange = (e) => {
@@ -34,11 +34,14 @@ const App = () => {
 
 	return (
 		<>
-			<div>
-				<Textarea changeHandler={handleChange} value={markedText} />
-			</div>
-			<div>
-				<Previewer text={markedText} />
+			<Title text='Markdown Previewer' classes='title' />
+			<div className='main'>
+				<div>
+					<Textarea changeHandler={handleChange} value={markedText} />
+				</div>
+				<div>
+					<Previewer text={markedText} />
+				</div>
 			</div>
 		</>
 	);

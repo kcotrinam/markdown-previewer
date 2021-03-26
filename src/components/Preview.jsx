@@ -1,10 +1,14 @@
 import marked from 'marked';
+import Title from './Title';
 
 const Previewer = ({ text }) => {
 	const markdown = marked(text, { breaks: true });
 
 	return (
-		<div id='preview' dangerouslySetInnerHTML={{ __html: markdown }}></div>
+		<>
+			<Title text='Result:' classes='subtitle subtitle-2' />
+			<div id='preview' dangerouslySetInnerHTML={{ __html: markdown }}></div>
+		</>
 	);
 };
 
