@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Previewer from './components/Preview';
+import Textarea from './components/Textarea';
 
 const INIIAL_STATE = `
 this is a paragraph
@@ -33,13 +34,12 @@ const App = () => {
 
 	return (
 		<>
-			<textarea
-				id='editor'
-				type='text'
-				value={markedText}
-				onChange={handleChange}
-			/>
-			<Previewer text={markedText} />
+			<div>
+				<Textarea changeHandler={handleChange} value={markedText} />
+			</div>
+			<div>
+				<Previewer text={markedText} />
+			</div>
 		</>
 	);
 };
