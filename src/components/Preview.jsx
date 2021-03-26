@@ -1,5 +1,6 @@
 import marked from 'marked';
 import Title from './Title';
+import '../sass/preview.scss';
 
 const Previewer = ({ text }) => {
 	const markdown = marked(text, { breaks: true });

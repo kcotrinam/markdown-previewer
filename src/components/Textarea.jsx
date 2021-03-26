@@ -1,4 +1,5 @@
 import Title from './Title';
+import '../sass/Textarea.scss';
 
 const Textarea = ({ changeHandler, value }) => {
 	return (
