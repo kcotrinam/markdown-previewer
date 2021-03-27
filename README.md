@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Portfolio
+# Markdown Previewer
 
 > This is a React project built to write markdown text and see the result of the input.
 
